@@ -6,191 +6,351 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#F5EDE1">
 <title>Les mots que je n'ai pas eu le temps de te dire</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
 <style>
 :root{
-  --ivory:#F5EDE1;--light:#FBF6EE;
-  --brown:#4A3022;--dark:#22160F;
-  --copper:#A87443;--gold:#D9B47E;
+  --ivory:#F5EDE1;
+  --light:#FBF6EE;
+  --brown:#4A3022;
+  --dark:#22160F;
+  --copper:#A87443;
+  --gold:#D9B47E;
   --muted:#806D5E;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  margin:0;min-height:100vh;
-  background:var(--ivory);color:var(--brown);
+  margin:0;
+  min-height:100vh;
+  background:var(--ivory);
+  color:var(--brown);
   font-family:"DM Sans",sans-serif;
 }
 body:before{
-  content:"";position:fixed;inset:0;z-index:-1;
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
   background:
     radial-gradient(ellipse at 20% 5%,#fffaf1,transparent 55%),
     radial-gradient(ellipse at 85% 90%,#e6ceb0,transparent 55%);
   pointer-events:none;
 }
-main{max-width:690px;margin:auto;padding:24px 20px 65px}
+main{
+  max-width:690px;
+  margin:auto;
+  padding:24px 20px 65px;
+}
 .brand{
-  text-align:center;font:500 19px "Cormorant Garamond",serif;
+  text-align:center;
+  font:500 19px "Cormorant Garamond",serif;
   letter-spacing:1px;
 }
-.ornament{text-align:center;color:var(--copper);margin:18px 0;letter-spacing:9px}
-.screen{display:none;animation:fadeUp .7s ease}
+.ornament{
+  text-align:center;
+  color:var(--copper);
+  margin:18px 0;
+  letter-spacing:9px;
+}
+.screen{
+  display:none;
+  animation:fadeUp .7s ease;
+}
 .screen.active{display:block}
 @keyframes fadeUp{
   from{opacity:0;transform:translateY(16px)}
   to{opacity:1;transform:translateY(0)}
 }
-h1,h2,h3{font-family:"Cormorant Garamond",serif;font-weight:500}
-h1{font-size:clamp(43px,9vw,72px);line-height:1.02;margin:20px 0}
-h2{font-size:clamp(39px,8vw,58px);line-height:1.07;margin:16px 0}
+h1,h2,h3{
+  font-family:"Cormorant Garamond",serif;
+  font-weight:500;
+}
+h1{
+  font-size:clamp(43px,9vw,72px);
+  line-height:1.02;
+  margin:20px 0;
+}
+h2{
+  font-size:clamp(39px,8vw,58px);
+  line-height:1.07;
+  margin:16px 0;
+}
 .script{
   font-family:"Great Vibes",cursive;
   font-size:clamp(39px,8vw,57px);
-  color:var(--copper);line-height:1.3;
+  color:var(--copper);
+  line-height:1.3;
 }
 .eyebrow{
-  font-size:10px;letter-spacing:2.7px;
-  text-transform:uppercase;color:var(--copper);
+  font-size:10px;
+  letter-spacing:2.7px;
+  text-transform:uppercase;
+  color:var(--copper);
   font-weight:600;
 }
 .intro{
   font:500 26px/1.35 "Cormorant Garamond",serif;
 }
-.prose{font-size:15px;line-height:1.9}
+.prose{
+  font-size:15px;
+  line-height:1.9;
+}
 .muted{color:var(--muted)}
 .center{text-align:center}
 .hero{padding-top:12px}
-button{font:600 13px "DM Sans",sans-serif;cursor:pointer}
+button{
+  font:600 13px "DM Sans",sans-serif;
+  cursor:pointer;
+}
 .primary{
-  display:block;width:100%;border:0;border-radius:40px;
+  display:block;
+  width:100%;
+  border:0;
+  border-radius:40px;
   background:linear-gradient(120deg,var(--brown),var(--dark));
-  color:#f7e9d4;padding:18px 22px;margin-top:25px;
+  color:#f7e9d4;
+  padding:18px 22px;
+  margin-top:25px;
   box-shadow:0 9px 22px #4a30221b;
 }
 .primary:active{transform:scale(.99)}
+.primary:disabled{opacity:.65;cursor:wait}
 .secondary{
-  background:transparent;border:1px solid #bca285;
-  border-radius:35px;padding:13px 18px;color:var(--brown);
+  background:transparent;
+  border:1px solid #bca285;
+  border-radius:35px;
+  padding:13px 18px;
+  color:var(--brown);
 }
 .ghost{
-  background:transparent;border:0;color:var(--muted);
-  text-decoration:underline;padding:13px;
+  background:transparent;
+  border:0;
+  color:var(--muted);
+  text-decoration:underline;
+  padding:13px;
 }
-.actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:12px}
+.actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-top:12px;
+}
 .panel{
-  background:var(--light);padding:clamp(25px,6vw,45px);
-  border:1px solid #d9b47e70;border-radius:23px;
+  background:var(--light);
+  padding:clamp(25px,6vw,45px);
+  border:1px solid #d9b47e70;
+  border-radius:23px;
   box-shadow:0 20px 50px #4a30220b;
 }
-.progress{display:flex;gap:8px;margin:25px 0 32px}
-.progress span{height:3px;flex:1;background:#d9c9b6;border-radius:5px}
+.progress{
+  display:flex;
+  gap:8px;
+  margin:25px 0 32px;
+}
+.progress span{
+  height:3px;
+  flex:1;
+  background:#d9c9b6;
+  border-radius:5px;
+}
 .progress span.done{background:var(--copper)}
-label{display:block;font-size:12px;font-weight:600;margin:23px 0 9px}
+label{
+  display:block;
+  font-size:12px;
+  font-weight:600;
+  margin:23px 0 9px;
+}
 input,textarea{
-  width:100%;border:1px solid #d9c9b6;border-radius:13px;
-  background:#fffdf8;padding:16px;
-  font:16px/1.65 "DM Sans",sans-serif;color:var(--brown);
+  width:100%;
+  border:1px solid #d9c9b6;
+  border-radius:13px;
+  background:#fffdf8;
+  padding:16px;
+  font:16px/1.65 "DM Sans",sans-serif;
+  color:var(--brown);
   outline:none;
 }
-textarea{min-height:155px;resize:vertical}
+textarea{
+  min-height:155px;
+  resize:vertical;
+}
 input:focus,textarea:focus{
   border-color:var(--copper);
   box-shadow:0 0 0 3px #a8744320;
 }
 .choice{
-  display:block;width:100%;text-align:left;
-  background:#fffdf8;border:1px solid #d9c9b6;
-  border-radius:13px;padding:16px;color:var(--brown);
-  margin:9px 0;font-weight:400;line-height:1.6;
+  display:block;
+  width:100%;
+  text-align:left;
+  background:#fffdf8;
+  border:1px solid #d9c9b6;
+  border-radius:13px;
+  padding:16px;
+  color:var(--brown);
+  margin:9px 0;
+  font-weight:400;
+  line-height:1.6;
 }
 .choice.selected{
-  background:#f1dfc8;border-color:var(--copper);
+  background:#f1dfc8;
+  border-color:var(--copper);
   box-shadow:inset 0 0 0 1px var(--copper);
 }
 .quote{
-  border-left:2px solid var(--gold);padding-left:18px;
+  border-left:2px solid var(--gold);
+  padding-left:18px;
   margin:27px 0;
   font:500 26px/1.35 "Cormorant Garamond",serif;
 }
 
 /* ENVELOPPE CINÉMATOGRAPHIQUE */
 .scene{
-  height:285px;display:flex;align-items:center;
-  justify-content:center;perspective:1000px;
-  position:relative;overflow:visible;
+  height:285px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  perspective:1000px;
+  position:relative;
+  overflow:visible;
 }
 .glow{
-  position:absolute;width:310px;height:240px;border-radius:50%;
+  position:absolute;
+  width:310px;
+  height:240px;
+  border-radius:50%;
   background:radial-gradient(ellipse,#e8bc75a0,transparent 70%);
-  filter:blur(28px);animation:breathe 4s ease-in-out infinite alternate;
+  filter:blur(28px);
+  animation:breathe 4s ease-in-out infinite alternate;
 }
-@keyframes breathe{to{opacity:.45;transform:scale(1.12)}}
+@keyframes breathe{
+  to{opacity:.45;transform:scale(1.12)}
+}
 .envelope{
-  position:relative;width:260px;height:165px;
-  background:#d9b894;border-radius:5px;
+  position:relative;
+  width:260px;
+  height:165px;
+  background:#d9b894;
+  border-radius:5px;
   box-shadow:0 24px 45px #4a302238;
   transform-style:preserve-3d;
 }
 .paper-peek{
-  position:absolute;left:13px;top:14px;width:234px;height:138px;
+  position:absolute;
+  left:13px;
+  top:14px;
+  width:234px;
+  height:138px;
   background:linear-gradient(145deg,#fffaf0,#e9d5b6);
-  border:1px solid #c9aa83;border-radius:3px;
-  z-index:1;transition:transform 1.4s .45s ease;
-  display:flex;align-items:center;justify-content:center;
-  font:30px "Great Vibes",cursive;color:var(--copper);
+  border:1px solid #c9aa83;
+  border-radius:3px;
+  z-index:1;
+  transition:transform 1.4s .45s ease;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font:30px "Great Vibes",cursive;
+  color:var(--copper);
 }
 .back-flap{
-  position:absolute;inset:0;background:#e6cba8;
+  position:absolute;
+  inset:0;
+  background:#e6cba8;
   clip-path:polygon(0 0,50% 57%,100% 0);
   z-index:0;
 }
 .front-flap{
-  position:absolute;inset:0;background:#d2ad83;
+  position:absolute;
+  inset:0;
+  background:#d2ad83;
   clip-path:polygon(0 100%,50% 37%,100% 100%);
   z-index:3;
 }
 .top-flap{
-  position:absolute;left:0;top:0;width:100%;height:95px;
-  background:#edd7b8;clip-path:polygon(0 0,100% 0,50% 100%);
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:95px;
+  background:#edd7b8;
+  clip-path:polygon(0 0,100% 0,50% 100%);
   transform-origin:top center;
   transition:transform .85s ease;
-  z-index:5;backface-visibility:hidden;
+  z-index:5;
+  backface-visibility:hidden;
 }
 .seal{
-  position:absolute;left:108px;top:64px;
-  width:44px;height:44px;border-radius:50%;
+  position:absolute;
+  left:108px;
+  top:64px;
+  width:44px;
+  height:44px;
+  border-radius:50%;
   background:radial-gradient(circle at 35% 30%,#c48b56,#82502f);
   border:2px solid #9e653e;
-  color:#ffe6bc;display:grid;place-items:center;
+  color:#ffe6bc;
+  display:grid;
+  place-items:center;
   font:27px "Cormorant Garamond",serif;
-  z-index:6;box-shadow:0 3px 8px #4a30224a;
+  z-index:6;
+  box-shadow:0 3px 8px #4a30224a;
   transition:opacity .35s,transform .35s;
 }
-.envelope.open .seal{opacity:0;transform:scale(1.5)}
-.envelope.open .top-flap{transform:rotateX(180deg);z-index:0}
-.envelope.open .paper-peek{transform:translateY(-115px)}
-.envelope.open{animation:envelopeExit 1s 1.6s forwards}
-@keyframes envelopeExit{to{opacity:0;transform:translateY(50px) scale(.88)}}
-.sparkle{
-  position:absolute;color:var(--gold);opacity:0;
-  font-size:19px;pointer-events:none;
+.envelope.open .seal{
+  opacity:0;
+  transform:scale(1.5);
 }
-.scene.opening .sparkle{animation:floatStar 1.8s ease-out forwards}
+.envelope.open .top-flap{
+  transform:rotateX(180deg);
+  z-index:0;
+}
+.envelope.open .paper-peek{
+  transform:translateY(-115px);
+}
+.envelope.open{
+  animation:envelopeExit 1s 1.6s forwards;
+}
+@keyframes envelopeExit{
+  to{opacity:0;transform:translateY(50px) scale(.88)}
+}
+.sparkle{
+  position:absolute;
+  color:var(--gold);
+  opacity:0;
+  font-size:19px;
+  pointer-events:none;
+}
+.scene.opening .sparkle{
+  animation:floatStar 1.8s ease-out forwards;
+}
 .sparkle.s1{left:15%;top:23%}
-.sparkle.s2{right:14%;top:32%;animation-delay:.3s!important}
-.sparkle.s3{left:27%;bottom:16%;animation-delay:.5s!important}
-.sparkle.s4{right:25%;bottom:12%;animation-delay:.2s!important}
+.sparkle.s2{
+  right:14%;top:32%;
+  animation-delay:.3s!important;
+}
+.sparkle.s3{
+  left:27%;bottom:16%;
+  animation-delay:.5s!important;
+}
+.sparkle.s4{
+  right:25%;bottom:12%;
+  animation-delay:.2s!important;
+}
 @keyframes floatStar{
   0%{opacity:0;transform:translateY(18px) scale(.5)}
   40%{opacity:1}
   100%{opacity:0;transform:translateY(-50px) scale(1.5)}
 }
 .reveal-card{
-  background:#fffaf0;border:1px solid #d5b990;
+  background:#fffaf0;
+  border:1px solid #d5b990;
   box-shadow:0 20px 50px #4a302225;
-  padding:42px 28px;text-align:center;
+  padding:42px 28px;
+  text-align:center;
   animation:letterRise 1.2s ease both;
 }
 @keyframes letterRise{
@@ -208,44 +368,102 @@ input:focus,textarea:focus{
   overflow-wrap:anywhere;
 }
 .letter p{white-space:pre-wrap}
-.letter .script{text-align:center;font-size:42px}
-.letter .end{text-align:right;font-style:italic}
-.letter-reveal{animation:letterRise 1.3s ease both}
+.letter .script{
+  text-align:center;
+  font-size:42px;
+}
+.letter .end{
+  text-align:right;
+  font-style:italic;
+}
+.letter-reveal{
+  animation:letterRise 1.3s ease both;
+}
 .offer{
   background:linear-gradient(145deg,#4A3022,#22160F);
-  color:#f7e9d5;padding:32px 25px;border-radius:21px;
-  margin-top:45px;text-align:center;
+  color:#f7e9d5;
+  padding:32px 25px;
+  border-radius:21px;
+  margin-top:45px;
+  text-align:center;
 }
-.offer h3{font-size:34px;margin:12px 0}
-.offer p{font-size:14px;line-height:1.9}
+.offer h3{
+  font-size:34px;
+  margin:12px 0;
+}
+.offer p{
+  font-size:14px;
+  line-height:1.9;
+}
 .offer a{
-  display:inline-block;background:#e6c79a;color:#302014;
-  text-decoration:none;border-radius:35px;
-  padding:16px 22px;margin-top:12px;
-  font-size:13px;font-weight:600;
+  display:inline-block;
+  background:#e6c79a;
+  color:#302014;
+  text-decoration:none;
+  border-radius:35px;
+  padding:16px 22px;
+  margin-top:12px;
+  font-size:13px;
+  font-weight:600;
 }
+
+/* MUSIQUE */
 .sound-control{
-  display:flex;justify-content:center;gap:10px;
-  align-items:center;margin:17px auto;
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  align-items:center;
+  margin:17px auto;
+  flex-wrap:wrap;
 }
 .sound-control button{
-  background:transparent;border:1px solid #c8af91;
-  border-radius:30px;padding:10px 15px;color:var(--brown);
+  background:transparent;
+  border:1px solid #c8af91;
+  border-radius:30px;
+  padding:10px 15px;
+  color:var(--brown);
   font-weight:400;
 }
 .sound-control button[aria-pressed="true"]{
-  background:#ead7bd;border-color:var(--copper);
+  background:#ead7bd;
+  border-color:var(--copper);
+}
+.music-floating{
+  position:fixed;
+  bottom:18px;
+  right:18px;
+  z-index:50;
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#4A3022,#22160F);
+  color:#e6c79a;
+  border:1px solid #d9b47e;
+  box-shadow:0 5px 20px #4a302230;
+  font-size:20px;
+  display:none;
+  align-items:center;
+  justify-content:center;
+}
+.music-floating.visible{display:flex}
+.music-floating:focus-visible{
+  outline:3px solid var(--copper);
+  outline-offset:3px;
 }
 footer{
-  text-align:center;color:var(--muted);
-  font-size:11px;line-height:2;
+  text-align:center;
+  color:var(--muted);
+  font-size:11px;
+  line-height:2;
   margin-top:45px;
 }
 @media(max-width:430px){
   main{padding:20px 16px 50px}
   .scene{height:250px}
   .envelope{transform:scale(.87)}
-  .envelope.open{animation:envelopeExit .9s 1.6s forwards}
+  .envelope.open{
+    animation:envelopeExit .9s 1.6s forwards;
+  }
 }
 @media(prefers-reduced-motion:reduce){
   *,*:before,*:after{
@@ -256,28 +474,61 @@ footer{
 @media print{
   @page{size:A4;margin:18mm}
   body{background:white}
-  body:before,.brand,.ornament,.screen:not(#result),
-  .no-print,footer{display:none!important}
+  body:before,.brand,.ornament,
+  .screen:not(#result),.no-print,
+  .music-floating,footer{
+    display:none!important;
+  }
   main{padding:0;max-width:none}
   #result{display:block!important}
-  .letter{border:0;box-shadow:none;padding:0;font-size:18pt}
+  .letter{
+    border:0;
+    box-shadow:none;
+    padding:0;
+    font-size:18pt;
+  }
 }
 </style>
 </head>
+
 <body>
+
+<!-- TON FICHIER MP3 : NOM EXACT SUR GITHUB -->
+<audio
+  id="backgroundMusic"
+  src="onlyinthemornings-only-in-the-mornings-in-absentia-119884%20(2).mp3"
+  preload="auto"
+  loop>
+</audio>
+
+<button
+  id="floatingMusic"
+  class="music-floating no-print"
+  onclick="toggleMusic()"
+  aria-label="Activer la musique"
+  title="Activer ou couper la musique">
+  ♫
+</button>
+
 <main>
 <div class="brand">Les soins de lumière d'Aurore</div>
 <div class="ornament">✧ ✦ ✧</div>
 
 <section id="welcome" class="screen active hero center">
   <div class="eyebrow">Une parenthèse rien que pour toi</div>
-  <h1>Il y a des mots qu'on garde parfois <span class="script">toute une vie...</span></h1>
+
+  <h1>
+    Il y a des mots qu'on garde parfois
+    <span class="script">toute une vie...</span>
+  </h1>
+
   <div class="scene" id="scene">
     <div class="glow"></div>
     <span class="sparkle s1">✧</span>
     <span class="sparkle s2">✦</span>
     <span class="sparkle s3">✧</span>
     <span class="sparkle s4">✦</span>
+
     <div class="envelope" id="envelope">
       <div class="back-flap"></div>
       <div class="paper-peek">Pour toi...</div>
@@ -286,58 +537,147 @@ footer{
       <div class="seal">♡</div>
     </div>
   </div>
-  <p class="intro">Et parfois, on aimerait juste pouvoir les dire encore une fois.</p>
-  <p class="prose muted">J'ai imaginé cette petite parenthèse pour toi. Pour cette personne qui te manque, pour les souvenirs que tu gardes précieusement et pour tous ces mots qui sont peut-être encore là, quelque part dans ton cœur.</p>
-  <button class="primary" id="openButton" onclick="openEnvelope()">J'aimerais lui écrire... ♡</button>
-  <p class="muted" style="font-size:12px">5 à 7 minutes · Gratuit · Sans inscription</p>
+
+  <p class="intro">
+    Et parfois, on aimerait juste pouvoir les dire encore une fois.
+  </p>
+
+  <p class="prose muted">
+    J'ai imaginé cette petite parenthèse pour toi.
+    Pour cette personne qui te manque, pour les souvenirs
+    que tu gardes précieusement et pour tous ces mots
+    qui sont peut-être encore là, quelque part dans ton cœur.
+  </p>
+
+  <button class="primary" id="openButton" onclick="openEnvelope()">
+    J'aimerais lui écrire... ♡
+  </button>
+
+  <p class="muted" style="font-size:12px">
+    5 à 7 minutes · Gratuit · Sans inscription
+  </p>
+
   <div class="sound-control">
-    <button id="soundOff" aria-pressed="true" onclick="setSound(false)">♡ Je préfère le silence</button>
-    <button id="soundOn" aria-pressed="false" onclick="setSound(true)">♫ Une ambiance douce</button>
+    <button id="soundOff" aria-pressed="true" onclick="setSound(false)">
+      ♡ Je préfère le silence
+    </button>
+    <button id="soundOn" aria-pressed="false" onclick="setSound(true)">
+      ♫ Une ambiance douce
+    </button>
   </div>
-  <p class="muted" style="font-size:11px">Le son est facultatif et peut être désactivé à tout moment.</p>
+
+  <p class="muted" style="font-size:11px">
+    Le son est facultatif et peut être désactivé à tout moment.
+  </p>
 </section>
 
 <section id="opening" class="screen">
   <div class="reveal-card">
     <div class="script">Juste quelques minutes...</div>
     <h2>Pour cette personne qui te manque.</h2>
-    <p class="prose">Aujourd'hui, on va prendre quelques minutes pour elle. Juste toi, elle, et tout ce que tu gardes dans ton cœur.</p>
-    <p class="prose muted">Tu sais, ici, tu n'as rien à réussir. Tu peux sourire, pleurer, ne pas savoir quoi écrire. Tu peux aussi passer une question ou t'arrêter quand tu veux.</p>
+
+    <p class="prose">
+      Aujourd'hui, on va prendre quelques minutes pour elle.
+      Juste toi, elle, et tout ce que tu gardes dans ton cœur.
+    </p>
+
+    <p class="prose muted">
+      Tu sais, ici, tu n'as rien à réussir.
+      Tu peux sourire, pleurer, ne pas savoir quoi écrire.
+      Tu peux aussi passer une question ou t'arrêter quand tu veux.
+    </p>
+
     <p class="prose">On y va, tout doucement ?</p>
-    <button class="primary" onclick="show('step1')">Oui, je suis prête ♡</button>
+
+    <button class="primary" onclick="show('step1')">
+      Oui, je suis prête ♡
+    </button>
   </div>
 </section>
 
 <section id="step1" class="screen">
   <div class="eyebrow">01 · La personne qui te manque</div>
-  <div class="progress"><span class="done"></span><span></span><span></span><span></span></div>
+  <div class="progress">
+    <span class="done"></span><span></span><span></span><span></span>
+  </div>
+
   <div class="panel">
     <div class="script">On commence doucement...</div>
     <h2>La personne qui te manque</h2>
-    <p class="prose">Il y a sûrement une personne à laquelle tu as pensé en ouvrant cette petite parenthèse.</p>
-    <p class="prose">Celle dont tu aimerais encore entendre la voix, ne serait-ce que quelques secondes.</p>
+
+    <p class="prose">
+      Il y a sûrement une personne à laquelle tu as pensé
+      en ouvrant cette petite parenthèse.
+    </p>
+
+    <p class="prose">
+      Celle dont tu aimerais encore entendre la voix,
+      ne serait-ce que quelques secondes.
+    </p>
+
     <label for="name">C'est quoi son petit prénom ?</label>
-    <input id="name" maxlength="80" placeholder="Son prénom ou son petit surnom...">
-    <label for="missing">Et dis-moi... qu'est-ce qui te manque le plus chez elle ?</label>
-    <textarea id="missing" maxlength="1500" placeholder="Son rire, ses bras, nos discussions..."></textarea>
-    <button class="primary" onclick="show('step2')">On continue doucement →</button>
-    <div class="actions"><button class="ghost" onclick="show('step2')">Passer cette question</button></div>
+    <input id="name" maxlength="80"
+      placeholder="Son prénom ou son petit surnom...">
+
+    <label for="missing">
+      Et dis-moi... qu'est-ce qui te manque le plus chez elle ?
+    </label>
+    <textarea id="missing" maxlength="1500"
+      placeholder="Son rire, ses bras, nos discussions..."></textarea>
+
+    <button class="primary" onclick="show('step2')">
+      On continue doucement →
+    </button>
+
+    <div class="actions">
+      <button class="ghost" onclick="show('step2')">
+        Passer cette question
+      </button>
+    </div>
   </div>
 </section>
 
 <section id="step2" class="screen">
   <div class="eyebrow">02 · Les souvenirs</div>
-  <div class="progress"><span class="done"></span><span class="done"></span><span></span><span></span></div>
+  <div class="progress">
+    <span class="done"></span><span class="done"></span>
+    <span></span><span></span>
+  </div>
+
   <div class="panel">
     <div class="script">Ces petits moments précieux</div>
     <h2>Tu sais ce qui est fou avec les souvenirs ?</h2>
-    <p class="prose">Parfois, c'est pas forcément les grandes occasions qui nous reviennent.</p>
-    <p class="prose">C'est un rire, une phrase qu'elle disait tout le temps, une habitude qui nous faisait lever les yeux au ciel...</p>
-    <p class="prose">Et aujourd'hui, ces petits trucs-là, on donnerait tellement pour les revivre.</p>
-    <label for="memory">Raconte-moi un souvenir qui te revient quand tu penses à elle.</label>
-    <textarea id="memory" maxlength="2500" placeholder="Je me souviens encore de cette fois où..."></textarea>
-    <div class="quote">Tu sais, t'as le droit de sourire en te souvenant. Même si cette personne te manque terriblement.</div>
-    <button class="primary" onclick="show('step3')">Continuer →</button>
+
+    <p class="prose">
+      Parfois, c'est pas forcément les grandes occasions
+      qui nous reviennent.
+    </p>
+
+    <p class="prose">
+      C'est un rire, une phrase qu'elle disait tout le temps,
+      une habitude qui nous faisait lever les yeux au ciel...
+    </p>
+
+    <p class="prose">
+      Et aujourd'hui, ces petits trucs-là,
+      on donnerait tellement pour les revivre.
+    </p>
+
+    <label for="memory">
+      Raconte-moi un souvenir qui te revient quand tu penses à elle.
+    </label>
+    <textarea id="memory" maxlength="2500"
+      placeholder="Je me souviens encore de cette fois où..."></textarea>
+
+    <div class="quote">
+      Tu sais, t'as le droit de sourire en te souvenant.
+      Même si cette personne te manque terriblement.
+    </div>
+
+    <button class="primary" onclick="show('step3')">
+      Continuer →
+    </button>
+
     <div class="actions">
       <button class="ghost" onclick="show('step1')">Retour</button>
       <button class="ghost" onclick="show('step3')">Passer</button>
@@ -347,18 +687,48 @@ footer{
 
 <section id="step3" class="screen">
   <div class="eyebrow">03 · Les mots restés dans le cœur</div>
-  <div class="progress"><span class="done"></span><span class="done"></span><span class="done"></span><span></span></div>
+  <div class="progress">
+    <span class="done"></span><span class="done"></span>
+    <span class="done"></span><span></span>
+  </div>
+
   <div class="panel">
     <div class="script">Tout ce que tu aimerais lui dire</div>
     <h2>Et si tu pouvais lui parler encore une fois ?</h2>
+
     <p class="prose">Pas besoin de trouver les bons mots.</p>
-    <p class="prose">Tu pourrais lui raconter ta journée, lui dire qu'elle te manque, lui poser cette question que tu gardes depuis si longtemps...</p>
-    <p class="prose">Ou même lui dire que tu lui en veux d'être partie.</p>
-    <p class="prose">Ici, t'as le droit de tout écrire. Même les choses que tu n'oserais dire à personne.</p>
-    <label for="words">Qu'est-ce que tu aimerais lui dire aujourd'hui ?</label>
-    <textarea id="words" maxlength="5000" style="min-height:230px" placeholder="Tu sais, il y a tellement de choses que j'aimerais encore te raconter..."></textarea>
-    <p class="muted" style="font-size:12px">Prends ton temps. Et si les mots ne viennent pas aujourd'hui, c'est très bien aussi.</p>
-    <button class="primary" onclick="show('step4')">Continuer →</button>
+
+    <p class="prose">
+      Tu pourrais lui raconter ta journée, lui dire qu'elle te manque,
+      lui poser cette question que tu gardes depuis si longtemps...
+    </p>
+
+    <p class="prose">
+      Ou même lui dire que tu lui en veux d'être partie.
+    </p>
+
+    <p class="prose">
+      Ici, t'as le droit de tout écrire.
+      Même les choses que tu n'oserais dire à personne.
+    </p>
+
+    <label for="words">
+      Qu'est-ce que tu aimerais lui dire aujourd'hui ?
+    </label>
+
+    <textarea id="words" maxlength="5000"
+      style="min-height:230px"
+      placeholder="Tu sais, il y a tellement de choses que j'aimerais encore te raconter..."></textarea>
+
+    <p class="muted" style="font-size:12px">
+      Prends ton temps. Et si les mots ne viennent pas aujourd'hui,
+      c'est très bien aussi.
+    </p>
+
+    <button class="primary" onclick="show('step4')">
+      Continuer →
+    </button>
+
     <div class="actions">
       <button class="ghost" onclick="show('step2')">Retour</button>
       <button class="ghost" onclick="show('step4')">Passer</button>
@@ -368,35 +738,91 @@ footer{
 
 <section id="step4" class="screen">
   <div class="eyebrow">04 · Ce qui reste</div>
-  <div class="progress"><span class="done"></span><span class="done"></span><span class="done"></span><span class="done"></span></div>
+  <div class="progress">
+    <span class="done"></span><span class="done"></span>
+    <span class="done"></span><span class="done"></span>
+  </div>
+
   <div class="panel">
     <div class="script">Une petite chose encore...</div>
     <h2>J'aimerais te proposer une dernière petite chose...</h2>
-    <p class="prose">Tu sais, quand quelqu'un qu'on aime disparaît, on a parfois tellement peur que les souvenirs s'effacent avec le temps.</p>
-    <p class="prose">Alors aujourd'hui, j'aimerais que tu choisisses un tout petit geste pour lui faire une place dans ta journée.</p>
-    <p class="prose">Pas pour rester dans le passé. Juste parce que cette personne a fait partie de ta vie. Et ça, personne ne pourra te l'enlever.</p>
+
+    <p class="prose">
+      Tu sais, quand quelqu'un qu'on aime disparaît,
+      on a parfois tellement peur que les souvenirs
+      s'effacent avec le temps.
+    </p>
+
+    <p class="prose">
+      Alors aujourd'hui, j'aimerais que tu choisisses
+      un tout petit geste pour lui faire une place dans ta journée.
+    </p>
+
+    <p class="prose">
+      Pas pour rester dans le passé.
+      Juste parce que cette personne a fait partie de ta vie.
+      Et ça, personne ne pourra te l'enlever.
+    </p>
+
     <label>Qu'est-ce qui te ferait du bien aujourd'hui ?</label>
+
     <div id="choices">
-      <button class="choice" onclick="choose(this)">♫ Écouter une chanson qui me rappelle cette personne</button>
-      <button class="choice" onclick="choose(this)">♡ Dire « je t'aime » à quelqu'un qui compte pour moi</button>
-      <button class="choice" onclick="choose(this)">✧ Raconter un souvenir à quelqu'un</button>
-      <button class="choice" onclick="choose(this)">✉ Garder cette lettre et la relire un autre jour</button>
-      <button class="choice" onclick="choose(this)">☼ Prendre un petit moment rien que pour moi</button>
+      <button class="choice" onclick="choose(this)">
+        ♫ Écouter une chanson qui me rappelle cette personne
+      </button>
+      <button class="choice" onclick="choose(this)">
+        ♡ Dire « je t'aime » à quelqu'un qui compte pour moi
+      </button>
+      <button class="choice" onclick="choose(this)">
+        ✧ Raconter un souvenir à quelqu'un
+      </button>
+      <button class="choice" onclick="choose(this)">
+        ✉ Garder cette lettre et la relire un autre jour
+      </button>
+      <button class="choice" onclick="choose(this)">
+        ☼ Prendre un petit moment rien que pour moi
+      </button>
     </div>
-    <label for="custom">Ou tu as peut-être une autre idée ?</label>
-    <input id="custom" maxlength="250" placeholder="Aujourd'hui, j'aimerais...">
-    <button class="primary" onclick="prepareLetter()">Découvrir ma lettre ♡</button>
-    <div class="actions"><button class="ghost" onclick="show('step3')">Retour</button></div>
+
+    <label for="custom">
+      Ou tu as peut-être une autre idée ?
+    </label>
+
+    <input id="custom" maxlength="250"
+      placeholder="Aujourd'hui, j'aimerais...">
+
+    <button class="primary" onclick="prepareLetter()">
+      Découvrir ma lettre ♡
+    </button>
+
+    <div class="actions">
+      <button class="ghost" onclick="show('step3')">Retour</button>
+    </div>
   </div>
 </section>
 
 <section id="letterTransition" class="screen center">
   <div class="reveal-card">
-    <div class="script">Regarde tout ce que tu viens de déposer...</div>
+    <div class="script">
+      Regarde tout ce que tu viens de déposer...
+    </div>
+
     <h2>Ces mots, ils étaient déjà là.</h2>
-    <p class="prose">Dans tes souvenirs, dans ton cœur, dans toutes ces petites choses que tu n'as pas oubliées.</p>
-    <p class="prose muted">J'ai rassemblé tes mots dans une lettre. Elle est à toi, et tu pourras la garder aussi longtemps que tu le souhaites.</p>
-    <button class="primary" onclick="revealLetter()">Ouvrir ma lettre ✧</button>
+
+    <p class="prose">
+      Dans tes souvenirs, dans ton cœur,
+      dans toutes ces petites choses que tu n'as pas oubliées.
+    </p>
+
+    <p class="prose muted">
+      J'ai rassemblé tes mots dans une lettre.
+      Elle est à toi, et tu pourras la garder
+      aussi longtemps que tu le souhaites.
+    </p>
+
+    <button class="primary" onclick="revealLetter()">
+      Ouvrir ma lettre ✧
+    </button>
   </div>
 </section>
 
@@ -404,32 +830,86 @@ footer{
   <div class="no-print center">
     <div class="eyebrow">Un souvenir à garder</div>
     <h2>Ta lettre, <span class="script">du cœur</span></h2>
-    <p class="prose muted">Je te laisse la découvrir à ton rythme...</p>
+    <p class="prose muted">
+      Je te laisse la découvrir à ton rythme...
+    </p>
   </div>
+
   <article class="letter" id="letter">
     <div class="script">Quelques mots pour toi</div>
     <div id="letterContent"></div>
     <p class="end">Avec tout mon amour.</p>
   </article>
+
   <div class="no-print">
-    <button class="primary" onclick="window.print()">Garder ma lettre en PDF ♡</button>
+    <button class="primary" onclick="window.print()">
+      Garder ma lettre en PDF ♡
+    </button>
+
     <div class="actions">
-      <button class="secondary" onclick="copyLetter()">Copier ma lettre</button>
-      <button class="secondary" onclick="show('step1')">Modifier mes mots</button>
+      <button class="secondary" onclick="copyLetter()">
+        Copier ma lettre
+      </button>
+      <button class="secondary" onclick="show('step1')">
+        Modifier mes mots
+      </button>
     </div>
-    <p id="copyStatus" role="status" class="muted center" style="font-size:12px"></p>
-    <div class="quote">Tu vois... en quelques minutes, tu viens de retrouver tellement de petites choses qui te relient à cette personne. Elles étaient déjà là, quelque part en toi.</div>
-    <p class="prose center">Tu n'as pas besoin d'oublier pour continuer à vivre. Tu peux continuer à aimer cette personne, parler d'elle, rire en pensant à elle. Et tu as aussi le droit de vivre de nouveaux moments heureux.</p>
+
+    <p id="copyStatus" role="status"
+      class="muted center" style="font-size:12px"></p>
+
+    <div class="quote">
+      Tu vois... en quelques minutes, tu viens de retrouver
+      tellement de petites choses qui te relient à cette personne.
+      Elles étaient déjà là, quelque part en toi.
+    </div>
+
+    <p class="prose center">
+      Tu n'as pas besoin d'oublier pour continuer à vivre.
+      Tu peux continuer à aimer cette personne, parler d'elle,
+      rire en pensant à elle.
+      Et tu as aussi le droit de vivre de nouveaux moments heureux.
+    </p>
 
     <div class="offer">
-      <div class="eyebrow" style="color:#e6c79a">Un petit mot de moi</div>
+      <div class="eyebrow" style="color:#e6c79a">
+        Un petit mot de moi
+      </div>
+
       <h3>Et s'il te reste encore des questions...</h3>
-      <p>Tu sais, dans mes séances de contact défunt, je rencontre souvent des personnes qui ont encore tellement de choses sur le cœur. Des questions, des regrets, ou simplement cette envie de retrouver un peu de ce lien.</p>
-      <p>Si un jour tu ressens le besoin de vivre cette expérience, sache que je serai là pour t'accompagner, avec toute la douceur et le respect que ce moment mérite.</p>
-      <p>Chaque séance est différente et je ne peux jamais garantir un message précis. Tu restes entièrement libre de faire ce pas, ou simplement de garder cette lettre pour toi.</p>
-      <a href="https://www.lessoinsdelumieredaurore.com/service-page/contact-d%C3%A9funt" target="_blank" rel="noopener noreferrer">Découvrir les séances de contact défunt ♡</a>
+
+      <p>
+        Tu sais, dans mes séances de contact défunt,
+        je rencontre souvent des personnes qui ont encore
+        tellement de choses sur le cœur.
+        Des questions, des regrets, ou simplement
+        cette envie de retrouver un peu de ce lien.
+      </p>
+
+      <p>
+        Si un jour tu ressens le besoin de vivre cette expérience,
+        sache que je serai là pour t'accompagner,
+        avec toute la douceur et le respect que ce moment mérite.
+      </p>
+
+      <p>
+        Chaque séance est différente et je ne peux jamais
+        garantir un message précis.
+        Tu restes entièrement libre de faire ce pas,
+        ou simplement de garder cette lettre pour toi.
+      </p>
+
+      <a href="https://www.lessoinsdelumieredaurore.com/service-page/contact-d%C3%A9funt"
+        target="_blank" rel="noopener noreferrer">
+        Découvrir les séances de contact défunt ♡
+      </a>
     </div>
-    <button class="ghost" style="display:block;margin:30px auto" onclick="restart()">Recommencer cette parenthèse</button>
+
+    <button class="ghost"
+      style="display:block;margin:30px auto"
+      onclick="restart()">
+      Recommencer cette parenthèse
+    </button>
   </div>
 </section>
 
@@ -441,117 +921,301 @@ footer{
 </main>
 
 <script>
-let selectedGesture="";
-let letterText="";
-let soundEnabled=false;
-let audioCtx=null;
-let audioNodes=[];
-let openingTimer=null;
+let selectedGesture = "";
+let letterText = "";
+let soundEnabled = false;
+let openingTimer = null;
 
-function show(id){
-  document.querySelectorAll(".screen").forEach(el=>el.classList.remove("active"));
+const music = document.getElementById("backgroundMusic");
+const floatingMusic = document.getElementById("floatingMusic");
+
+let fadeFrame = null;
+let fadeGeneration = 0;
+const targetVolume = 0.22;
+
+music.volume = 0;
+
+/* NAVIGATION */
+function show(id) {
+  document.querySelectorAll(".screen").forEach(el => {
+    el.classList.remove("active");
+  });
+
   document.getElementById(id).classList.add("active");
-  window.scrollTo({top:0,behavior:"smooth"});
+
+  floatingMusic.classList.toggle("visible", id !== "welcome");
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
 }
-function val(id){return document.getElementById(id).value.trim()}
-function choose(el){
-  document.querySelectorAll(".choice").forEach(b=>b.classList.remove("selected"));
+
+function val(id) {
+  return document.getElementById(id).value.trim();
+}
+
+function choose(el) {
+  document.querySelectorAll(".choice").forEach(button => {
+    button.classList.remove("selected");
+  });
+
   el.classList.add("selected");
-  selectedGesture=el.textContent.trim();
+  selectedGesture = el.textContent.trim();
 }
-function openEnvelope(){
-  const btn=document.getElementById("openButton");
-  btn.disabled=true;
+
+/* ANIMATION D'OUVERTURE */
+function openEnvelope() {
+  const btn = document.getElementById("openButton");
+  btn.disabled = true;
+
+  if (soundEnabled && music.paused) {
+    startSound();
+  }
+
   document.getElementById("scene").classList.add("opening");
   document.getElementById("envelope").classList.add("open");
-  openingTimer=setTimeout(()=>show("opening"),2550);
+
+  openingTimer = setTimeout(() => {
+    show("opening");
+  }, 2550);
 }
-function setSound(on){
-  soundEnabled=on;
-  document.getElementById("soundOff").setAttribute("aria-pressed",String(!on));
-  document.getElementById("soundOn").setAttribute("aria-pressed",String(on));
-  if(on)startSound();else stopSound();
+
+/* MUSIQUE MP3 */
+function updateSoundButtons() {
+  document.getElementById("soundOff")
+    .setAttribute("aria-pressed", String(!soundEnabled));
+
+  document.getElementById("soundOn")
+    .setAttribute("aria-pressed", String(soundEnabled));
+
+  floatingMusic.textContent = soundEnabled ? "♫" : "♪";
+  floatingMusic.setAttribute(
+    "aria-label",
+    soundEnabled ? "Couper la musique" : "Activer la musique"
+  );
+  floatingMusic.title = soundEnabled
+    ? "Couper la musique"
+    : "Activer la musique";
 }
-function startSound(){
-  stopSound();
-  try{
-    const AC=window.AudioContext||window.webkitAudioContext;
-    if(!AC)return;
-    audioCtx=new AC();
-    const master=audioCtx.createGain();
-    master.gain.value=.012;
-    master.connect(audioCtx.destination);
-    [174.61,261.63,349.23].forEach((freq,i)=>{
-      const osc=audioCtx.createOscillator();
-      const gain=audioCtx.createGain();
-      osc.type="sine";
-      osc.frequency.value=freq;
-      gain.gain.value=[.3,.18,.12][i];
-      osc.connect(gain);gain.connect(master);
-      osc.start();
-      audioNodes.push(osc);
+
+function fadeMusic(target, duration = 1800) {
+  if (fadeFrame !== null) {
+    cancelAnimationFrame(fadeFrame);
+    fadeFrame = null;
+  }
+
+  const generation = ++fadeGeneration;
+  const initial = music.volume;
+  const start = performance.now();
+
+  function animate(now) {
+    if (generation !== fadeGeneration) return;
+
+    const progress = Math.min((now - start) / duration, 1);
+    const smooth = progress * progress * (3 - 2 * progress);
+
+    music.volume = Math.max(
+      0,
+      Math.min(1, initial + (target - initial) * smooth)
+    );
+
+    if (progress < 1) {
+      fadeFrame = requestAnimationFrame(animate);
+    } else {
+      fadeFrame = null;
+      if (target === 0 && !soundEnabled) {
+        music.pause();
+      }
+    }
+  }
+
+  fadeFrame = requestAnimationFrame(animate);
+}
+
+function setSound(on) {
+  soundEnabled = on;
+  updateSoundButtons();
+
+  if (on) {
+    startSound();
+  } else {
+    stopSound();
+  }
+}
+
+function toggleMusic() {
+  setSound(!soundEnabled);
+}
+
+function startSound() {
+  if (!soundEnabled) return;
+
+  if (!music.paused) {
+    fadeMusic(targetVolume, 2000);
+    return;
+  }
+
+  music.play()
+    .then(() => {
+      if (soundEnabled) {
+        fadeMusic(targetVolume, 2200);
+      } else {
+        music.pause();
+        music.volume = 0;
+      }
+    })
+    .catch(error => {
+      console.warn("Lecture audio impossible :", error);
+      soundEnabled = false;
+      updateSoundButtons();
     });
-  }catch(e){soundEnabled=false}
 }
-function stopSound(){
-  audioNodes.forEach(n=>{try{n.stop()}catch(e){}});
-  audioNodes=[];
-  if(audioCtx){audioCtx.close().catch(()=>{});audioCtx=null}
+
+function stopSound() {
+  if (music.paused) {
+    if (fadeFrame !== null) {
+      cancelAnimationFrame(fadeFrame);
+      fadeFrame = null;
+    }
+    ++fadeGeneration;
+    music.volume = 0;
+    return;
+  }
+
+  fadeMusic(0, 1400);
 }
-function addParagraph(container,text){
-  const p=document.createElement("p");
-  p.textContent=text;
+
+/* CONSTRUCTION DE LA LETTRE */
+function addParagraph(container, text) {
+  const p = document.createElement("p");
+  p.textContent = text;
   container.appendChild(p);
 }
-function prepareLetter(){
-  const name=val("name")||"toi qui me manques";
-  const missing=val("missing");
-  const memory=val("memory");
-  const words=val("words");
-  const gesture=val("custom")||selectedGesture;
-  const lines=[
-    "À "+name+",",
+
+function prepareLetter() {
+  const name = val("name") || "toi qui me manques";
+  const missing = val("missing");
+  const memory = val("memory");
+  const words = val("words");
+  const gesture = val("custom") || selectedGesture;
+
+  const lines = [
+    "À " + name + ",",
     "Aujourd'hui, j'ai pris quelques minutes pour penser à toi."
   ];
-  if(missing)lines.push("Tu sais ce qui me manque tellement chez toi ? "+missing);
-  if(memory)lines.push("Et puis, il y a ce souvenir que je garde précieusement...\n"+memory);
-  if(words)lines.push("Il y a aussi quelque chose que j'aimerais te dire...\n"+words);
-  if(gesture)lines.push("Aujourd'hui, j'ai choisi un petit geste pour faire une place à ton souvenir :\n"+gesture);
-  lines.push("Je ne sais pas toujours comment mettre des mots sur ton absence. Mais je sais que tu as fait partie de ma vie, et que les souvenirs que nous avons partagés comptent encore énormément pour moi.");
-  const container=document.getElementById("letterContent");
+
+  if (missing) {
+    lines.push(
+      "Tu sais ce qui me manque tellement chez toi ? " + missing
+    );
+  }
+
+  if (memory) {
+    lines.push(
+      "Et puis, il y a ce souvenir que je garde précieusement...\n"
+      + memory
+    );
+  }
+
+  if (words) {
+    lines.push(
+      "Il y a aussi quelque chose que j'aimerais te dire...\n"
+      + words
+    );
+  }
+
+  if (gesture) {
+    lines.push(
+      "Aujourd'hui, j'ai choisi un petit geste pour faire une place à ton souvenir :\n"
+      + gesture
+    );
+  }
+
+  lines.push(
+    "Je ne sais pas toujours comment mettre des mots sur ton absence. " +
+    "Mais je sais que tu as fait partie de ma vie, et que les souvenirs " +
+    "que nous avons partagés comptent encore énormément pour moi."
+  );
+
+  const container = document.getElementById("letterContent");
   container.replaceChildren();
-  lines.forEach(line=>addParagraph(container,line));
-  letterText=lines.join("\n\n")+"\n\nAvec tout mon amour.";
+
+  lines.forEach(line => addParagraph(container, line));
+
+  letterText = lines.join("\n\n") + "\n\nAvec tout mon amour.";
+
   show("letterTransition");
 }
-function revealLetter(){
-  const letter=document.getElementById("letter");
+
+/* RÉVÉLATION DE LA LETTRE */
+function revealLetter() {
+  const letter = document.getElementById("letter");
+
   letter.classList.remove("letter-reveal");
   void letter.offsetWidth;
   letter.classList.add("letter-reveal");
+
   show("result");
 }
-async function copyLetter(){
-  const status=document.getElementById("copyStatus");
-  try{
+
+/* COPIER LA LETTRE */
+async function copyLetter() {
+  const status = document.getElementById("copyStatus");
+
+  try {
     await navigator.clipboard.writeText(letterText);
-    status.textContent="Ta lettre a été copiée ♡";
-  }catch(e){
-    status.textContent="La copie n'est pas disponible ici. Tu peux utiliser l'option PDF.";
+    status.textContent = "Ta lettre a été copiée ♡";
+  } catch (error) {
+    status.textContent =
+      "La copie n'est pas disponible ici. Tu peux utiliser l'option PDF.";
   }
 }
-function restart(){
-  if(!confirm("Recommencer effacera les réponses de cette session. Continuer ?"))return;
-  if(openingTimer)clearTimeout(openingTimer);
-  document.querySelectorAll("input,textarea").forEach(el=>el.value="");
-  document.querySelectorAll(".choice").forEach(el=>el.classList.remove("selected"));
-  selectedGesture="";letterText="";
+
+/* RECOMMENCER */
+function restart() {
+  if (!confirm(
+    "Recommencer effacera les réponses de cette session. Continuer ?"
+  )) {
+    return;
+  }
+
+  if (openingTimer) {
+    clearTimeout(openingTimer);
+    openingTimer = null;
+  }
+
+  document.querySelectorAll("input,textarea").forEach(el => {
+    el.value = "";
+  });
+
+  document.querySelectorAll(".choice").forEach(el => {
+    el.classList.remove("selected");
+  });
+
+  selectedGesture = "";
+  letterText = "";
+
   document.getElementById("scene").classList.remove("opening");
   document.getElementById("envelope").classList.remove("open");
-  document.getElementById("openButton").disabled=false;
+  document.getElementById("openButton").disabled = false;
+  document.getElementById("copyStatus").textContent = "";
+
   show("welcome");
 }
-window.addEventListener("pagehide",stopSound);
+
+/* ARRÊTER LA MUSIQUE EN QUITTANT */
+window.addEventListener("pagehide", () => {
+  if (fadeFrame !== null) {
+    cancelAnimationFrame(fadeFrame);
+    fadeFrame = null;
+  }
+  music.pause();
+  music.volume = 0;
+});
+
+updateSoundButtons();
 </script>
+
 </body>
 </html>
