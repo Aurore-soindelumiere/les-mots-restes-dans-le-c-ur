@@ -1,0 +1,862 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F5EDE1">
+<title>Les mots que je n'ai pas eu le temps de te dire</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ivory:#F5EDE1;
+  --light:#FBF6EE;
+  --brown:#4A3022;
+  --dark:#22160F;
+  --copper:#A87443;
+  --gold:#D9B47E;
+  --muted:#806D5E;
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  min-height:100vh;
+  background:var(--ivory);
+  color:var(--brown);
+  font-family:"DM Sans",sans-serif;
+}
+
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse at 15% 5%,#fff9ed 0%,transparent 45%),
+    radial-gradient(ellipse at 90% 90%,#e5d0b5 0%,transparent 50%);
+  opacity:.8;
+  z-index:-1;
+}
+
+main{
+  max-width:680px;
+  margin:auto;
+  padding:28px 19px 60px;
+}
+
+.brand{
+  text-align:center;
+  font-family:"Cormorant Garamond",serif;
+  font-size:18px;
+  letter-spacing:1px;
+}
+
+.stars{
+  text-align:center;
+  color:var(--copper);
+  letter-spacing:12px;
+  margin:24px 0;
+}
+
+.screen{
+  display:none;
+  animation:appear .65s ease;
+}
+
+.screen.active{display:block}
+
+@keyframes appear{
+  from{opacity:0;transform:translateY(15px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.hero{text-align:center;padding-top:30px}
+
+.eyebrow{
+  font-size:10px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--copper);
+  font-weight:600;
+}
+
+h1,h2,h3{
+  font-family:"Cormorant Garamond",serif;
+  font-weight:500;
+}
+
+h1{
+  font-size:clamp(44px,9vw,72px);
+  line-height:.97;
+  margin:25px 0;
+}
+
+h2{
+  font-size:clamp(38px,8vw,56px);
+  line-height:1.05;
+  margin:18px 0;
+}
+
+.script{
+  font-family:"Great Vibes",cursive;
+  font-size:clamp(37px,8vw,55px);
+  color:var(--copper);
+  line-height:1.25;
+}
+
+.intro{
+  font-family:"Cormorant Garamond",serif;
+  font-size:25px;
+  line-height:1.35;
+  max-width:500px;
+  margin:22px auto;
+}
+
+.small{
+  font-size:13px;
+  line-height:1.8;
+  color:var(--muted);
+}
+
+.envelope-area{
+  height:220px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  perspective:900px;
+}
+
+.envelope{
+  width:230px;
+  height:145px;
+  position:relative;
+  background:#ddc3a3;
+  border-radius:4px;
+  box-shadow:0 20px 35px #4a30222a;
+  transition:transform .8s;
+}
+
+.envelope:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:#e9d6bd;
+  clip-path:polygon(0 0,50% 57%,100% 0);
+}
+
+.envelope:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:#cfad86;
+  clip-path:polygon(0 100%,50% 38%,100% 100%);
+}
+
+.seal{
+  position:absolute;
+  top:52px;
+  left:96px;
+  z-index:3;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  background:var(--copper);
+  color:#fff4df;
+  display:grid;
+  place-items:center;
+  font-family:"Cormorant Garamond",serif;
+  font-size:24px;
+}
+
+.envelope.open{
+  transform:translateY(15px) rotateX(18deg);
+}
+
+.panel{
+  background:var(--light);
+  border:1px solid #d9b47e66;
+  border-radius:22px;
+  padding:clamp(24px,6vw,45px);
+  box-shadow:0 15px 45px #4a30220c;
+}
+
+.progress{
+  display:flex;
+  gap:8px;
+  margin:25px 0 35px;
+}
+
+.progress span{
+  height:3px;
+  flex:1;
+  border-radius:4px;
+  background:#d9c9b6;
+}
+
+.progress span.done{background:var(--copper)}
+
+.prompt{
+  font-family:"Cormorant Garamond",serif;
+  font-size:25px;
+  line-height:1.35;
+  margin:22px 0;
+}
+
+label{
+  display:block;
+  font-size:12px;
+  font-weight:600;
+  margin:22px 0 9px;
+}
+
+input,textarea{
+  display:block;
+  width:100%;
+  padding:16px;
+  border:1px solid #d9c9b6;
+  border-radius:12px;
+  background:#fffdf8;
+  color:var(--brown);
+  font:16px "DM Sans",sans-serif;
+  outline:none;
+}
+
+input:focus,textarea:focus{
+  border-color:var(--copper);
+  box-shadow:0 0 0 3px #a8744320;
+}
+
+textarea{
+  min-height:145px;
+  resize:vertical;
+  line-height:1.7;
+}
+
+button{
+  font:600 13px "DM Sans",sans-serif;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.primary{
+  display:block;
+  width:100%;
+  border:0;
+  border-radius:50px;
+  background:linear-gradient(115deg,var(--brown),var(--dark));
+  color:#f5e6d1;
+  padding:18px 22px;
+  margin-top:25px;
+}
+
+.primary:hover{transform:translateY(-2px)}
+
+.secondary{
+  border:1px solid #bba185;
+  background:transparent;
+  color:var(--brown);
+  border-radius:50px;
+  padding:14px 20px;
+}
+
+.ghost{
+  background:none;
+  border:0;
+  color:var(--muted);
+  text-decoration:underline;
+  padding:15px;
+}
+
+.actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  justify-content:center;
+  margin-top:12px;
+}
+
+.choice{
+  width:100%;
+  text-align:left;
+  border:1px solid #d9c9b6;
+  background:#fffdf8;
+  color:var(--brown);
+  padding:16px;
+  border-radius:12px;
+  margin:7px 0;
+  font-weight:400;
+}
+
+.choice.selected{
+  background:#f0dfc9;
+  border-color:var(--copper);
+  box-shadow:inset 0 0 0 1px var(--copper);
+}
+
+.quote{
+  border-left:2px solid var(--gold);
+  padding-left:20px;
+  font-family:"Cormorant Garamond",serif;
+  font-size:25px;
+  line-height:1.4;
+  margin:30px 0;
+}
+
+.letter{
+  background:#fffaf0;
+  padding:clamp(25px,6vw,48px);
+  border:1px solid #d8bd97;
+  box-shadow:0 12px 35px #4a30221a;
+  font-family:"Cormorant Garamond",serif;
+  font-size:23px;
+  line-height:1.55;
+  overflow-wrap:anywhere;
+}
+
+.letter p{white-space:pre-wrap}
+
+.letter .script{
+  text-align:center;
+  font-size:39px;
+}
+
+.letter .end{
+  text-align:right;
+  font-style:italic;
+}
+
+.offer{
+  margin-top:45px;
+  padding:28px;
+  border-radius:20px;
+  background:linear-gradient(145deg,#4A3022,#22160F);
+  color:#f8e9d6;
+  text-align:center;
+}
+
+.offer h3{
+  font-size:32px;
+  margin:10px 0;
+}
+
+.offer p{
+  font-size:14px;
+  line-height:1.8;
+}
+
+.offer a{
+  display:inline-block;
+  background:#e6c79a;
+  color:#302014;
+  text-decoration:none;
+  border-radius:40px;
+  padding:15px 22px;
+  margin-top:10px;
+  font-size:13px;
+  font-weight:600;
+}
+
+footer{
+  text-align:center;
+  font-size:11px;
+  color:var(--muted);
+  padding:35px 0 5px;
+  line-height:2;
+}
+
+@media print{
+  @page{size:A4;margin:18mm}
+  body{background:white}
+  body:before,.brand,.stars,
+  .screen:not(#result),.no-print,footer{
+    display:none!important;
+  }
+  main{padding:0;max-width:none}
+  #result{display:block!important}
+  #result>.eyebrow,
+  #result>h2,
+  #result>.small{display:none}
+  .letter{
+    border:0;
+    box-shadow:none;
+    font-size:18pt;
+    padding:0;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{
+    animation-duration:.01ms!important;
+    transition-duration:.01ms!important;
+  }
+}
+</style>
+</head>
+
+<body>
+<main>
+
+<div class="brand">Les soins de lumière d'Aurore</div>
+<div class="stars">✧ ✦ ✧</div>
+
+<!-- ACCUEIL -->
+<section id="welcome" class="screen active hero">
+  <div class="eyebrow">Une parenthèse rien que pour toi</div>
+
+  <div class="envelope-area">
+    <div class="envelope" id="envelope">
+      <div class="seal">A</div>
+    </div>
+  </div>
+
+  <h1>
+    Les mots que je n'ai pas eu le temps
+    <span class="script">de te dire</span>
+  </h1>
+
+  <p class="intro">
+    Il y a des personnes qui ne sont plus là,
+    mais qui continuent d'habiter nos souvenirs.
+  </p>
+
+  <p class="small">
+    J'ai créé ce petit espace pour que tu puisses prendre
+    quelques minutes avec cette personne qui te manque.
+    Pour te souvenir, écrire, sourire peut-être.
+    Ou pleurer, si les larmes viennent.
+  </p>
+
+  <p class="small">
+    Tu n'as rien à réussir ici.
+    Tu peux prendre ton temps, passer une question
+    ou t'arrêter quand tu en ressens le besoin.
+  </p>
+
+  <button class="primary" onclick="begin()">
+    Ouvrir cette parenthèse ✧
+  </button>
+
+  <p class="small">
+    Environ 5 à 7 minutes · Gratuit · Sans inscription
+  </p>
+</section>
+
+<!-- ÉTAPE 1 -->
+<section id="step1" class="screen">
+  <div class="eyebrow">Première étape · Se souvenir</div>
+
+  <div class="progress">
+    <span class="done"></span><span></span><span></span><span></span>
+  </div>
+
+  <div class="panel">
+    <div class="script">Une personne, mille souvenirs</div>
+    <h2>La personne qui me manque</h2>
+
+    <p class="prompt">
+      Si tu pouvais passer encore cinq minutes avec une
+      personne qui n'est plus là, qui choisirais-tu ?
+    </p>
+
+    <label for="name">
+      Son prénom, ou le petit nom que tu lui donnais
+    </label>
+    <input id="name" maxlength="80" placeholder="Son prénom...">
+
+    <label for="missing">
+      Qu'est-ce qui te manque le plus chez elle ?
+    </label>
+    <textarea id="missing" maxlength="1500"
+      placeholder="Sa voix, son rire, sa façon de me regarder..."></textarea>
+
+    <button class="primary" onclick="go(2)">
+      Continuer doucement →
+    </button>
+
+    <div class="actions">
+      <button class="ghost" onclick="go(2)">
+        Passer cette étape
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ÉTAPE 2 -->
+<section id="step2" class="screen">
+  <div class="eyebrow">Deuxième étape · Se rappeler</div>
+
+  <div class="progress">
+    <span class="done"></span><span class="done"></span>
+    <span></span><span></span>
+  </div>
+
+  <div class="panel">
+    <div class="script">Ce qui reste vivant en toi</div>
+    <h2>Ce que je garde de toi</h2>
+
+    <p class="prompt">
+      Quand tu penses à cette personne,
+      quel souvenir te revient spontanément ?
+    </p>
+
+    <p class="small">
+      Pas forcément un grand moment.
+      Parfois, c'est une expression, un fou rire,
+      une odeur, un dimanche ordinaire...
+    </p>
+
+    <textarea id="memory" maxlength="2500"
+      placeholder="Je me souviens de..."></textarea>
+
+    <div class="quote">
+      Certains souvenirs nous font pleurer et sourire
+      en même temps. Et c'est très bien comme ça.
+    </div>
+
+    <button class="primary" onclick="go(3)">
+      Continuer →
+    </button>
+
+    <div class="actions">
+      <button class="ghost" onclick="go(1)">Retour</button>
+      <button class="ghost" onclick="go(3)">Passer</button>
+    </div>
+  </div>
+</section>
+
+<!-- ÉTAPE 3 -->
+<section id="step3" class="screen">
+  <div class="eyebrow">Troisième étape · Déposer les mots</div>
+
+  <div class="progress">
+    <span class="done"></span><span class="done"></span>
+    <span class="done"></span><span></span>
+  </div>
+
+  <div class="panel">
+    <div class="script">Du fond du cœur</div>
+    <h2>Ce que j'aurais aimé te dire</h2>
+
+    <p class="prompt">
+      Imagine que tu puisses lui écrire quelques lignes
+      aujourd'hui. Qu'aurais-tu envie de lui raconter ?
+    </p>
+
+    <p class="small">
+      Un merci. Un je t'aime. Une question.
+      Une colère. Une nouvelle de ta vie.
+      Ou simplement : « Tu me manques. »
+    </p>
+
+    <textarea id="words" maxlength="5000"
+      style="min-height:230px"
+      placeholder="Si tu savais tout ce que j'aimerais encore te dire..."></textarea>
+
+    <p class="small">
+      Tu peux aussi ne rien écrire.
+      Il n'y a pas de bonne manière de traverser l'absence.
+    </p>
+
+    <button class="primary" onclick="go(4)">
+      Continuer →
+    </button>
+
+    <div class="actions">
+      <button class="ghost" onclick="go(2)">Retour</button>
+      <button class="ghost" onclick="go(4)">Passer</button>
+    </div>
+  </div>
+</section>
+
+<!-- ÉTAPE 4 -->
+<section id="step4" class="screen">
+  <div class="eyebrow">
+    Quatrième étape · Faire vivre le souvenir
+  </div>
+
+  <div class="progress">
+    <span class="done"></span><span class="done"></span>
+    <span class="done"></span><span class="done"></span>
+  </div>
+
+  <div class="panel">
+    <div class="script">Un petit geste d'amour</div>
+    <h2>Ce que je choisis de faire vivre</h2>
+
+    <p class="prompt">
+      Et si tu faisais une toute petite place à ce souvenir
+      dans ta journée ?
+    </p>
+
+    <p class="small">
+      Choisis un geste, uniquement si tu en as envie.
+    </p>
+
+    <div id="choices">
+      <button class="choice" onclick="choose(this)">
+        ♫ Écouter une chanson qui me rappelle cette personne
+      </button>
+
+      <button class="choice" onclick="choose(this)">
+        ♡ Dire « je t'aime » à quelqu'un qui compte pour moi
+      </button>
+
+      <button class="choice" onclick="choose(this)">
+        ✧ Raconter un joli souvenir à quelqu'un
+      </button>
+
+      <button class="choice" onclick="choose(this)">
+        ✉ Relire cette lettre quand j'en ressentirai le besoin
+      </button>
+
+      <button class="choice" onclick="choose(this)">
+        ☼ M'accorder un moment de douceur, juste pour moi
+      </button>
+    </div>
+
+    <label for="custom">
+      Ou invente ton propre petit geste
+    </label>
+
+    <input id="custom" maxlength="250"
+      placeholder="Aujourd'hui, j'ai envie de...">
+
+    <button class="primary" onclick="makeLetter()">
+      Découvrir ma lettre ✧
+    </button>
+
+    <div class="actions">
+      <button class="ghost" onclick="go(3)">Retour</button>
+    </div>
+  </div>
+</section>
+
+<!-- LETTRE PERSONNALISÉE -->
+<section id="result" class="screen">
+  <div class="eyebrow no-print">Un souvenir à garder</div>
+
+  <h2 class="no-print" style="text-align:center">
+    Ta lettre, <span class="script">du cœur</span>
+  </h2>
+
+  <p class="small no-print" style="text-align:center">
+    Ces mots sont les tiens.
+    Tu peux les garder, les relire, les modifier
+    ou simplement les laisser ici.
+  </p>
+
+  <article class="letter" id="letter">
+    <div class="script">Quelques mots pour toi</div>
+    <div id="letterContent"></div>
+    <p class="end">Avec tout mon amour.</p>
+  </article>
+
+  <div class="no-print">
+    <button class="primary" onclick="window.print()">
+      Enregistrer ma lettre en PDF ✧
+    </button>
+
+    <div class="actions">
+      <button class="secondary" onclick="copyLetter()">
+        Copier ma lettre
+      </button>
+
+      <button class="secondary" onclick="go(1)">
+        Modifier mes réponses
+      </button>
+    </div>
+
+    <p id="copyStatus" class="small" role="status"
+       style="text-align:center"></p>
+
+    <div class="quote">
+      Tu n'as pas besoin d'oublier pour continuer à vivre.
+      Certaines personnes laissent dans nos vies
+      bien plus que des souvenirs.
+    </div>
+
+    <p class="small" style="text-align:center">
+      Tu peux continuer à aimer cette personne,
+      à parler d'elle, à rire en pensant à elle.
+      Et tu as aussi le droit de vivre
+      de nouveaux moments heureux.
+    </p>
+
+    <!-- ACCOMPAGNEMENT CONTACT DÉFUNT -->
+    <div class="offer">
+      <div class="eyebrow" style="color:#e6c79a">
+        Un mot d'Aurore
+      </div>
+
+      <h3>Et s'il te reste encore des questions...</h3>
+
+      <p>
+        Je suis Aurore, médium énergéticienne.
+        À travers mes séances de contact défunt,
+        je propose un espace d'écoute et de médiumnité,
+        avec douceur et respect.
+      </p>
+
+      <p>
+        Chaque séance est différente et aucun message précis
+        ne peut être garanti. Tu restes libre de venir vers moi,
+        ou simplement de garder cette lettre pour toi.
+      </p>
+
+      <a
+        href="https://www.lessoinsdelumieredaurore.com/service-page/contact-d%C3%A9funt"
+        target="_blank"
+        rel="noopener noreferrer">
+        Découvrir les séances de contact défunt ♡
+      </a>
+    </div>
+
+    <button class="ghost"
+      style="display:block;margin:30px auto"
+      onclick="restart()">
+      Recommencer cette parenthèse
+    </button>
+  </div>
+</section>
+
+<footer class="no-print">
+  Créé avec douceur par Aurore · Les soins de lumière d'Aurore<br>
+  Cet espace d'expression ne remplace pas un accompagnement
+  psychologique ou médical.<br>
+  Tes réponses restent dans ton navigateur et
+  ne sont pas transmises à Aurore.
+</footer>
+
+</main>
+
+<script>
+let selectedGesture="";
+let letterText="";
+
+function show(id){
+  document.querySelectorAll(".screen").forEach(el=>{
+    el.classList.remove("active");
+  });
+
+  document.getElementById(id).classList.add("active");
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function begin(){
+  document.getElementById("envelope").classList.add("open");
+  setTimeout(()=>show("step1"),700);
+}
+
+function go(n){
+  show("step"+n);
+}
+
+function choose(el){
+  document.querySelectorAll(".choice").forEach(btn=>{
+    btn.classList.remove("selected");
+  });
+
+  el.classList.add("selected");
+  selectedGesture=el.textContent.trim();
+}
+
+function val(id){
+  return document.getElementById(id).value.trim();
+}
+
+function addParagraph(container,text){
+  const p=document.createElement("p");
+  p.textContent=text;
+  container.appendChild(p);
+}
+
+function makeLetter(){
+  const name=val("name")||"toi qui me manques";
+  const missing=val("missing");
+  const memory=val("memory");
+  const words=val("words");
+  const gesture=val("custom")||selectedGesture;
+
+  const lines=[
+    "À "+name+",",
+    "Aujourd'hui, j'ai pris un moment pour penser à toi."
+  ];
+
+  if(missing){
+    lines.push("Ce qui me manque chez toi : "+missing);
+  }
+
+  if(memory){
+    lines.push(
+      "Il y a un souvenir que je garde précieusement : "+memory
+    );
+  }
+
+  if(words){
+    lines.push(words);
+  }
+
+  if(gesture){
+    lines.push(
+      "Pour faire une petite place à ton souvenir dans ma vie, j'ai choisi ceci : "+gesture
+    );
+  }
+
+  lines.push(
+    "Je ne sais pas toujours comment mettre des mots sur ton absence. Mais aujourd'hui, j'ai pris le temps de me souvenir de toi, à ma manière."
+  );
+
+  const container=document.getElementById("letterContent");
+  container.replaceChildren();
+
+  lines.forEach(line=>addParagraph(container,line));
+
+  letterText=lines.join("\n\n")+
+    "\n\nAvec tout mon amour.";
+
+  show("result");
+}
+
+async function copyLetter(){
+  const status=document.getElementById("copyStatus");
+
+  try{
+    await navigator.clipboard.writeText(letterText);
+    status.textContent="Ta lettre a été copiée ♡";
+  }catch(e){
+    status.textContent=
+      "La copie n'est pas disponible ici. Tu peux utiliser l'option PDF.";
+  }
+}
+
+function restart(){
+  if(!confirm(
+    "Recommencer effacera les réponses de cette session. Continuer ?"
+  ))return;
+
+  document.querySelectorAll("input,textarea").forEach(el=>{
+    el.value="";
+  });
+
+  document.querySelectorAll(".choice").forEach(el=>{
+    el.classList.remove("selected");
+  });
+
+  selectedGesture="";
+  letterText="";
+
+  document.getElementById("envelope").classList.remove("open");
+  show("welcome");
+}
+</script>
+
+</body>
+</html>
